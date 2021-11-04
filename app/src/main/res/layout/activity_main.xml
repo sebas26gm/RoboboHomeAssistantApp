@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/readLoop"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="8dp"
+    tools:context=".MainActivity">
+
+
+    <!--
+    Botón para encender dispositivo
+    -->
+
+    <!--
+    Botón para apagar dispositivo
+    -->
+
+    <Button
+        android:id="@+id/button_On"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="68dp"
+        android:layout_marginLeft="68dp"
+        android:layout_marginTop="244dp"
+        android:text="Turn On"
+        app:backgroundTint="#673AB7"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/button_Off"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="50dp"
+        android:layout_marginRight="50dp"
+        android:text="Turn Off"
+        app:backgroundTint="#673AB7"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/button_On" />
+
+    <!--
+    Botón para leer dispositivo
+    -->
+    <Button
+        android:id="@+id/button_ReadState"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="50dp"
+        android:layout_marginLeft="50dp"
+        android:layout_marginTop="25dp"
+        android:text="Read State"
+        app:backgroundTint="#673AB7"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button_On" />
+
+    <!--
+    Botón para lista de dispositivos
+    -->
+    <Button
+        android:id="@+id/button_List"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="50dp"
+        android:layout_marginRight="50dp"
+        android:text="List Devices"
+        app:backgroundTint="#673AB7"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/button_ReadState" />
+
+    <!--
+    Vista móvil de texto mostrado en pantalla
+    -->
+    <ScrollView
+        android:id="@+id/scrollView2"
+        android:layout_width="0dp"
+        android:layout_height="297dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="450dp"
+        android:layout_marginEnd="4dp"
+        android:layout_marginRight="4dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.529">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/text_view_result"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#000" />
+        </LinearLayout>
+    </ScrollView>
+
+    <!--
+    Texto editable para input de usuario. Acá se escribe el entity id deseado.
+    -->
+
+    <!--
+    Botón para guardar en Android Studio el valor del entity ID escrito
+    -->
+    <EditText
+        android:id="@+id/devID"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="164dp"
+        android:ems="10"
+        android:hint="Entity ID"
+        android:inputType="textPersonName"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/sendID"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="OK"
+        app:backgroundTint="#673AB7"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/devID"
+        app:layout_constraintTop_toTopOf="@+id/devID" />
+
+    <!--
+    Texto editable para input de usuario. Acá se escribe la dirección IP de Home Assistant.
+    -->
+    <EditText
+        android:id="@+id/HA_IP"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:ems="10"
+        android:hint="HA IP"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="@+id/devID"
+        app:layout_constraintStart_toStartOf="@+id/devID"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!--
+    Botón para guardar en Android Studio el valor de la dirección IP escrita
+    -->
+    <Button
+        android:id="@+id/sendIP"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Ok"
+        app:backgroundTint="#673AB7"
+        app:layout_constraintEnd_toEndOf="@+id/sendID"
+        app:layout_constraintTop_toTopOf="@+id/HA_IP" />
+
+    <EditText
+        android:id="@+id/LLToken"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="Long Live Token"
+        android:inputType="textPersonName"
+        app:layout_constraintBottom_toTopOf="@+id/devID"
+        app:layout_constraintEnd_toEndOf="@+id/HA_IP"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/HA_IP"
+        app:layout_constraintTop_toBottomOf="@+id/HA_IP" />
+
+    <Button
+        android:id="@+id/sendToken"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Ok"
+        app:backgroundTint="#673AB7"
+        app:layout_constraintBottom_toTopOf="@+id/sendID"
+        app:layout_constraintEnd_toEndOf="@+id/sendID"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/sendID"
+        app:layout_constraintTop_toBottomOf="@+id/sendIP" />
+
+    <Button
+        android:id="@+id/switch1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Automatization"
+        app:backgroundTint="#673AB7"
+        app:layout_constraintBottom_toTopOf="@+id/scrollView2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button_List" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
